@@ -1,0 +1,50 @@
+<header class="bar bar-nav">
+  {{#if id}}
+  <a href="#photos/{{id}}" class="btn btn-link btn-nav pull-left">
+  {{else}}
+  <a href="#photos" class="btn btn-link btn-nav pull-left">
+  {{/if}}
+    <span class="icon icon-close"></span>
+  </a>
+  <button id="save" disabled class="btn btn-link btn-nav pull-right">
+    <span class="icon icon-check"></span>
+  </button>
+  <h1 class="title">
+  {{#if id}}
+    Edit Photo
+  {{else}}
+    Add Photo
+  {{/if}}
+  </h1>
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item active" href="#photos">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+  <a class="tab-item" href="#settings">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+  <a class="tab-item" href="#info">
+    <span class="icon icon-info"></span>
+    <span class="tab-label">Info</span>
+  </a>
+</nav>
+
+<div class="content">
+  <form id="addedit-form" class="content-padded">
+    <input id="description" name="description" type="text" placeholder="Enter description" maxlength="25">
+    <a href="javascript:void(0);" id="addphoto">
+      {{#if thumbnail}}
+      <img id="photo" class="img-responsive" src="data:image/png;base64,{{thumbnail}}" />
+      {{else}}
+      <img id="photo" class="img-responsive" src="images/placeholder.png" />
+      {{/if}}
+    </a>
+    {{#if id}}
+    <input id="delete" type="button" value="Delete" class="btn btn-negative btn-block">
+    {{/if}}
+  </form>
+</div>

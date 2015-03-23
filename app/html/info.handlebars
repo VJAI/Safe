@@ -1,0 +1,46 @@
+<header class="bar bar-nav">
+  {{#if backToUrl}}
+  <a href="{{backToUrl}}" class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+  </a>
+  {{/if}}
+  <h1 class="title">Info</h1>
+</header>
+
+<nav class="bar bar-tab">
+  {{#if isAuthenticated}}
+  <a class="tab-item" href="#photos">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+  <a class="tab-item" href="#settings">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+  {{/if}}
+  <a class="tab-item active" href="#info">
+    <span class="icon icon-info"></span>
+    <span class="tab-label">Info</span>
+  </a>
+</nav>
+
+<div class="content">
+  <div class="content-padded">
+    <h4>Safe</h4>
+    <p>
+      A simple app that helps to preserve your photos safe! The persisted photos are encrypted using the powerful AES 256 encryption algorithm.
+    </p>
+    <p>
+      This app is an experiment done to demonstrate how we can architect and develop a pure hybrid application that runs across mobile platforms using Cordova, Backbone and other UI technologies.
+    </p>
+    <p>
+      This application is developed purely for educational purpose. You can download the complete source code from <a href="https://github.com/vjai/safe">Github</a>. You are free to use the source code as a reference material to architect your mobile apps for personal or commercial purposes.</p>
+
+    <p class="bold">You are not allowed to sell this app in same or different name. You are also not allowed to build and sell apps by copying maximum portion of the source code. For more information about license please visit this <a href="https://github.com/vjai/safe/license">page</a>.
+    </p>
+
+    <p>
+      As I said earlier, this is an experiment! If you run into any issues of using this app or source code the complete responsibility is yours! For any questions please contact me <a href="http://www.prideparrot.com/contact">here</a>.
+    </p>
+  </div>
+</div>

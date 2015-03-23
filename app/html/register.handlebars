@@ -1,0 +1,28 @@
+<header class="bar bar-nav">
+  <h1 class="title">SAFE</h1>
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item" href="#info">
+    <span class="icon icon-info"></span>
+    <span class="tab-label">Info</span>
+  </a>
+</nav>
+
+<div class="content">
+  <p class="content-padded text-center">
+    Keep your photos safe!
+  </p>
+
+  <form id="register-form" class="content-padded">
+    <input id="password" name="password" type="password" maxlength="15" placeholder="Enter your password" autocomplete="off">
+    <select id="security-question" name="security-question">
+      <option selected>Select a question</option>
+      {{#each questions}}
+      <option>{{this}}</option>
+      {{/each}}
+    </select>
+    <input id="security-answer" name="security-answer" type="password" maxlength="15" placeholder="Enter your answer" disabled autocomplete="off">
+    <input id="register" type="submit" value="Register" class="btn btn-positive btn-block" disabled>
+  </form>
+</div>

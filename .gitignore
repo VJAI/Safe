@@ -1,0 +1,12 @@
+# Server and client components
+node_modules
+bower_components
+# Unit-test reports
+coverage
+# Cordova folders
+platforms/
+plugins/
+merges/
+www/
+# Handlebars template file
+app/js/templates.js

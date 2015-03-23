@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<widget id="com.prideparrot.safe" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+  <name>Safe</name>
+
+  <description>
+    Cordova based mobile app to manage secret photos.
+  </description>
+
+  <author email="vijay.prideparrot@gmail.com" href="http://prideparrot.com">
+    Vijaya Anand
+  </author>
+
+  <content src="index.html" />
+
+  <plugin name="Camera" value="CDVCamera" />
+  <plugin name="File" value="CDVFile" />
+  <plugin name="com.webXells.imageResizer" value="ImageResize" />
+  <plugin name="SimpleCrypto" value="SimpleCrypto" />
+  <plugin name="Notification" value="CDVNotification" />
+
+  <preference name="orientation" value="portrait" />
+  <preference name="SplashScreen" value="screen" />
+  <preference name="SplashScreenDelay" value="10000" />
+
+  <platform name="android">
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <preference name="KeepRunning" value="true"/>
+    <!--<icon src="res/android/icon.png" />
+    <splash src="res/screen/android/splash.png" />-->
+  </platform>
+
+  <platform name="ios">
+    <preference name="iosPersistentFileLocation" value="Library" />
+    <!--<icon src="res/ios/icon.png" width="80" height="80" />
+    <splash src="res/screen/ios/splash.png" width="320" height="480" />-->
+  </platform>
+</widget>

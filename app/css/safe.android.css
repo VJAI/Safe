@@ -1,0 +1,18 @@
+/* Android styles */
+
+.bar-tab {
+  bottom: 0; 
+  top: auto;
+}
+
+.bar .bar-nav {
+  border-top: solid 1px #ccc;
+}
+
+.content {
+  padding-bottom: 50px !important;
+}
+
+.title {
+  text-align: center;
+}

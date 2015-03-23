@@ -1,0 +1,39 @@
+<header class="bar bar-nav">
+  <a href="#logout" class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-close"></span>
+  </a>
+  <a href="#add" class="btn btn-link btn-nav pull-right">
+    <span class="icon icon-plus"></span>
+  </a>
+  <h1 class="title">Secret Photos</h1>
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item active" href="#photos">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+  <a class="tab-item" href="#settings">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+  <a class="tab-item" href="#info">
+    <span class="icon icon-info"></span>
+    <span class="tab-label">Info</span>
+  </a>
+</nav>
+
+<div class="content">
+  {{#if total}}
+  <div id="search-form" class="content-padded">
+    <input id="search" type="search" placeholder="Search">
+  </div>
+  {{/if}}
+
+  <p id="total" class="text-center">
+    {{#if total}} {{total}} photo(s) found {{else}} No photos found {{/if}}
+  </p>
+
+  <div id="list-container">
+  </div>
+</div>

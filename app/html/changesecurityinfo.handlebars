@@ -1,0 +1,34 @@
+<header class="bar bar-nav">
+  <a href="#settings" class="btn btn-link btn-nav pull-left">
+    <span class="icon icon-left-nav"></span>
+  </a>
+  <h1 class="title">Change SecurityInfo</h1>
+</header>
+
+<nav class="bar bar-tab">
+  <a class="tab-item" href="#photos">
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
+  </a>
+  <a class="tab-item active" href="#settings">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
+  </a>
+  <a class="tab-item" href="#info">
+    <span class="icon icon-info"></span>
+    <span class="tab-label">Info</span>
+  </a>
+</nav>
+
+<div class="content">
+  <form id="changesecurityinfo-form" class="content-padded">
+    <select id="security-question" name="security-question">
+      <option>Select a question</option>
+      {{#each questions}}      
+      <option>{{this}}</option>
+      {{/each}}
+    </select>
+    <input id="security-answer" name="security-answer" type="password" maxlength="15" placeholder="Enter your answer"  autocomplete="off">
+    <input id="save" type="submit" value="Save" disabled class="btn btn-positive btn-block">
+  </form>
+</div>

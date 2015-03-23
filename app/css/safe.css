@@ -1,0 +1,48 @@
+*:not(input):not(textarea) {
+  -webkit-user-select: none;
+  /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none;
+  /* disable the IOS popup when long-press on a link */
+}
+
+/* Common styles */
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.bold {
+  font-weight: bold;
+}
+.field-label {
+  margin: 10px 0 10px 0;
+  display: inline-block;
+}
+
+/* Login Page */
+.login-page .content {
+  padding-top: 65px !important;
+}
+.login-page form {
+  margin-top: 15px;
+}
+.forgot-password {
+  display: block;
+}
+#search-form {
+  margin-bottom: 0px;
+}
+.description {
+  margin: 10px;
+}
+#total {
+  margin-top: 10px;
+}

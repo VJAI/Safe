@@ -21,18 +21,13 @@
 
   <preference name="orientation" value="portrait" />
   <preference name="SplashScreen" value="screen" />
-  <preference name="SplashScreenDelay" value="10000" />
+  <preference name="SplashScreenDelay" value="3000" />
 
   <platform name="android">
     <preference name="AndroidPersistentFileLocation" value="Internal" />
-    <preference name="KeepRunning" value="true"/>
-    <!--<icon src="res/android/icon.png" />
-    <splash src="res/screen/android/splash.png" />-->
   </platform>
 
   <platform name="ios">
     <preference name="iosPersistentFileLocation" value="Library" />
-    <!--<icon src="res/ios/icon.png" width="80" height="80" />
-    <splash src="res/screen/ios/splash.png" width="320" height="480" />-->
   </platform>
 </widget>

@@ -2,8 +2,6 @@
 
   'use strict';
 
-  var cordova = require('cordova');
-
   module.exports = function (grunt) {
 
     // Load all the grunt tasks.
@@ -15,7 +13,7 @@
     // Config object.
     var config = {
       app: 'app', // working directory
-      dist: 'www', // distribution folder
+      dist: 'cordova', // distribution folder
       tests: 'tests', // tests folder
       platform: grunt.option('platform') || 'ios' // target platform
     };
@@ -24,80 +22,7 @@
 
       config: config,
 
-      // Watch files for changes and runs tasks based on the changed files.
-      watch: {
-
-        // Watch grunt file.
-        gruntfile: {
-          files: ['Gruntfile.js']
-        },
-
-        // Watch javascript files.
-        js: {
-          files: [
-            '<%= config.app %>/js/**/*.js'
-          ],
-          tasks: ['jshint:src'],
-          options: {
-            livereload: true
-          }
-        },
-
-        // Watch handlebar templates.
-        handlebars: {
-          files: [
-            '<%= config.app %>/html/{,*/}*.handlebars'
-          ],
-          tasks: ['handlebars'],
-          options: {
-            livereload: true
-          }
-        },
-
-        // Watch html and css files.
-        livereload: {
-          options: {
-            livereload: '<%= connect.options.livereload %>'
-          },
-          files: [
-            '<%= config.app %>/index.<%= config.platform %>.html',
-            '<%= config.app %>/css/safe.css',
-            '<%= config.app %>/css/safe.<%= config.platform %>.css'
-          ]
-        }
-      },
-
-      // Grunt server settings
-      connect: {
-        options: {
-          hostname: 'localhost',
-          open: true,
-          livereload: true
-        },
-        app: {
-          options: {
-            middleware: function (connect) {
-              return [
-                connect.static(config.app),
-                connect().use('/bower_components', connect.static('./bower_components'))
-              ];
-            },
-            port: 9000,
-            open: {
-              target: 'http://localhost:9000/index.<%= config.platform %>.html'
-            }
-          }
-        },
-        dist: {
-          options: {
-            port: 9001,
-            base: '<%= config.dist %>',
-            keepalive: true
-          }
-        }
-      },
-
-      // Make sure code styles are up to par and there are no obvious mistakes
+      // Make sure code styles are up to par and there are no obvious mistakes.
       jshint: {
         options: {
           jshintrc: '.jshintrc',
@@ -157,12 +82,12 @@
         }
       },
 
-      // Empty the distribution folder.
+      // Empty the 'www' folder.
       clean: {
         options: {
           force: true
         },
-        dist: ['<%= config.dist %>']
+        dist: ['<%= config.dist %>/www']
       },
 
       // Precompile the handlebar templates.
@@ -188,7 +113,7 @@
             mainConfigFile: '<%= config.app %>/js/main.js',
             almond: true,
             include: ['main'],
-            out: '<%= config.dist %>/js/index.min.js',
+            out: '<%= config.dist %>/www/js/index.min.js',
             optimize: 'uglify'
           }
         }
@@ -198,7 +123,7 @@
       cssmin: {
         compile: {
           files: {
-            '<%= config.dist %>/css/index.min.css': [
+            '<%= config.dist %>/www/css/index.min.css': [
               'bower_components/ratchet/dist/css/ratchet.css',
               'bower_components/ratchet/dist/css/ratchet-theme-<%= config.platform %>.css',
               '<%= config.app %>/css/safe.css',
@@ -212,26 +137,140 @@
       processhtml: {
         dist: {
           files: {
-            '<%= config.dist %>/index.html': ['<%= config.app %>/index.<%= config.platform %>.html']
+            '<%= config.dist %>/www/index.html': ['<%= config.app %>/index.<%= config.platform %>.html']
           }
         }
       },
 
       // Copy the static resources like fonts, images to the platform specific folder.
       copy: {
+        config: {
+          expand: true,
+          dot: true,
+          src: 'config.xml',
+          dest: 'cordova'
+        },
         fonts: {
           expand: true,
           dot: true,
           cwd: 'bower_components/ratchet/fonts',
-          dest: '<%= config.dist %>/fonts',
+          dest: '<%= config.dist %>/www/fonts',
           src: ['{,*/}*.*']
         },
         images: {
           expand: true,
           dot: true,
           cwd: '<%= config.app %>/images',
-          dest: '<%= config.dist %>/images',
+          dest: '<%= config.dist %>/www/images',
           src: ['{,*/}*.*']
+        }
+      },
+
+      // Grunt server settings
+      connect: {
+        options: {
+          hostname: 'localhost',
+          open: true,
+          livereload: true
+        },
+        app: {
+          options: {
+            middleware: function (connect) {
+              return [
+                connect.static(config.app),
+                connect().use('/bower_components', connect.static('./bower_components'))
+              ];
+            },
+            port: 9000,
+            open: {
+              target: 'http://localhost:9000/index.<%= config.platform %>.html'
+            }
+          }
+        },
+        dist: {
+          options: {
+            port: 9001,
+            base: '<%= config.dist %>/www',
+            keepalive: true
+          }
+        }
+      },
+
+      // Watch files for changes and runs tasks based on the changed files.
+      watch: {
+
+        // Watch grunt file.
+        gruntfile: {
+          files: ['Gruntfile.js']
+        },
+
+        // Watch javascript files.
+        js: {
+          files: [
+            '<%= config.app %>/js/**/*.js'
+          ],
+          tasks: ['jshint:src'],
+          options: {
+            livereload: true
+          }
+        },
+
+        // Watch html and css files.
+        livereload: {
+          options: {
+            livereload: '<%= connect.options.livereload %>'
+          },
+          files: [
+            '<%= config.app %>/index.<%= config.platform %>.html',
+            '<%= config.app %>/css/safe.css',
+            '<%= config.app %>/css/safe.<%= config.platform %>.css'
+          ]
+        }
+      },
+
+      // Install node packages and bower components.
+      /*jshint camelcase:false*/
+      auto_install: {
+        local: {}
+      },
+
+      // Task to install platforms and plugins and to build, emulate and deploy the app.
+      cordovacli: {
+        options: {
+            path: './<%= config.dist %>'
+        },
+        install: {
+          options: {
+            command: ['create', 'platform', 'plugin'],
+            platforms: ['android'],
+            plugins: [
+              'camera',
+              'file',
+              'dialogs',
+              'https://github.com/VJAI/simple-crypto.git',
+              'https://github.com/wymsee/cordova-imageResizer.git'
+            ],
+            id: 'com.prideparrot.safe',
+            name: 'Safe'
+          }
+        },
+        build: {
+          options: {
+            command: 'build',
+            platforms: ['<%= config.platform %>']
+          }
+        },
+        emulate: {
+          options: {
+            command: 'emulate',
+            platforms: ['<%= config.platform %>']
+          }
+        },
+        deploy: {
+          options: {
+            command: 'run',
+            platforms: ['<%= config.platform %>']
+          }
         }
       }
     });
@@ -248,8 +287,20 @@
       'copy'
     ]);
 
+    grunt.registerTask('cordova-build', [
+      'cordovacli:build'
+    ]);
+
+    grunt.registerTask('cordova-emulate', [
+      'cordovacli:emulate'
+    ]);
+
+    grunt.registerTask('cordova-deploy', [
+      'cordovacli:deploy'
+    ]);
+
     // Start the server and watch for changes.
-    grunt.registerTask('serve', [
+    grunt.registerTask('default', [
       'jshint:src',
       'handlebars',
       'connect:app',
@@ -262,52 +313,35 @@
       'connect:dist'
     ]);
 
-    // Cordova: build the application.
-    grunt.registerTask('cordova-build', 'Build the application for single platform', function () {
-      var done = this.async();
-      cordova.build(config.platform, done);
-    });
-
-    // Cordova: emulate the application.
-    grunt.registerTask('cordova-emulate', 'Emulate the application for single platform', function () {
-      var done = this.async();
-      cordova.emulate(config.platform, done);
-    });
-
-    // Cordova: run the application.
-    grunt.registerTask('cordova-run', 'Run the application for single platform', function () {
-      var done = this.async();
-      cordova.run(config.platform, done);
-    });
-
-    // Default task
-    grunt.registerTask('default', [
-      'jshint:src',
-      'buildweb'
-    ]);
-
     // Run karma tests.
     grunt.registerTask('tests', [
       'jshint:tests',
       'karma'
     ]);
 
-    // Build the application.
+    // Install node packages and bower components.
+    // Create cordova project, add platforms and plugins.
+    grunt.registerTask('create', [
+      'auto_install',
+      'cordovacli:install'
+    ]);
+
+    // Build the app.
     grunt.registerTask('build', [
       'buildweb',
-      'cordova-build'
+      'cordovacli:build'
     ]);
 
-    // Emulate the application.
+    // Run the app in emulator.
     grunt.registerTask('emulate', [
       'buildweb',
-      'cordova-emulate'
+      'cordovacli:emulate'
     ]);
 
-    // Run the application.
-    grunt.registerTask('run', [
+    // Deploy the app in device.
+    grunt.registerTask('deploy', [
       'buildweb',
-      'cordova-run'
+      'cordovacli:deploy'
     ]);
   };
 })();

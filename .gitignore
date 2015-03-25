@@ -4,9 +4,6 @@ bower_components
 # Unit-test reports
 coverage
 # Cordova folders
-platforms/
-plugins/
-merges/
-www/
+cordova
 # Handlebars template file
 app/js/templates.js

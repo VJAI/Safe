@@ -12,10 +12,11 @@
 
     // Config object.
     var config = {
-      app: 'app', // working directory
-      dist: 'cordova', // distribution folder
-      tests: 'tests', // tests folder
-      platform: grunt.option('platform') || 'ios' // target platform
+      src: 'src',                                 // working directory
+      tests: 'tests',                             // unit tests folder
+      dist: 'cordova',                            // distribution folder
+      supported: ['ios', 'android'],              // supported platforms
+      platform: grunt.option('platform') || 'ios' // current target platform
     };
 
     grunt.initConfig({
@@ -30,8 +31,8 @@
         },
         src: [
           'Gruntfile.js',
-          '<%= config.app %>/js/**/*.js',
-          '!<%= config.app %>/js/templates.js'
+          '<%= config.src %>/js/**/*.js',
+          '!<%= config.src %>/js/templates.js'
         ],
         tests: [
           '<%= config.tests %>/**/*.js'
@@ -50,7 +51,7 @@
               included: false
             },
             {
-              src: '<%= config.app %>/**/*.js',
+              src: '<%= config.src %>/**/*.js',
               included: false
             },
             {
@@ -61,11 +62,11 @@
               src: '<%= config.tests %>/main.js'
             }
           ],
-          exclude: ['<%= config.app %>/main.js'],
+          exclude: ['<%= config.src %>/main.js'],
           port: 9002,
           reporters: ['mocha', 'coverage'],
           preprocessors: {
-            '<%= config.app %>/js/**/*.js': 'coverage'
+            '<%= config.src %>/js/**/*.js': 'coverage'
           },
           coverageReporter: {
             type: 'text'
@@ -100,8 +101,8 @@
               return pieces[pieces.length - 1].split('.')[0];
             }
           },
-          src: ['<%= config.app %>/html/{,*/}*.handlebars'],
-          dest: '<%= config.app %>/js/templates.js'
+          src: ['<%= config.src %>/html/{,*/}*.handlebars'],
+          dest: '<%= config.src %>/js/templates.js'
         }
       },
 
@@ -109,8 +110,8 @@
       requirejs: {
         compile: {
           options: {
-            baseUrl: '<%= config.app %>/js',
-            mainConfigFile: '<%= config.app %>/js/main.js',
+            baseUrl: '<%= config.src %>/js',
+            mainConfigFile: '<%= config.src %>/js/main.js',
             almond: true,
             include: ['main'],
             out: '<%= config.dist %>/www/js/index.min.js',
@@ -126,8 +127,8 @@
             '<%= config.dist %>/www/css/index.min.css': [
               'bower_components/ratchet/dist/css/ratchet.css',
               'bower_components/ratchet/dist/css/ratchet-theme-<%= config.platform %>.css',
-              '<%= config.app %>/css/safe.css',
-              '<%= config.app %>/css/safe.<%= config.platform %>.css'
+              '<%= config.src %>/css/safe.css',
+              '<%= config.src %>/css/safe.<%= config.platform %>.css'
             ]
           }
         }
@@ -137,7 +138,7 @@
       processhtml: {
         dist: {
           files: {
-            '<%= config.dist %>/www/index.html': ['<%= config.app %>/index.<%= config.platform %>.html']
+            '<%= config.dist %>/www/index.html': ['<%= config.src %>/index.<%= config.platform %>.html']
           }
         }
       },
@@ -160,7 +161,7 @@
         images: {
           expand: true,
           dot: true,
-          cwd: '<%= config.app %>/images',
+          cwd: '<%= config.src %>/images',
           dest: '<%= config.dist %>/www/images',
           src: ['{,*/}*.*']
         }
@@ -177,7 +178,7 @@
           options: {
             middleware: function (connect) {
               return [
-                connect.static(config.app),
+                connect.static(config.src),
                 connect().use('/bower_components', connect.static('./bower_components'))
               ];
             },
@@ -207,7 +208,7 @@
         // Watch javascript files.
         js: {
           files: [
-            '<%= config.app %>/js/**/*.js'
+            '<%= config.src %>/js/**/*.js'
           ],
           tasks: ['jshint:src'],
           options: {
@@ -221,9 +222,9 @@
             livereload: '<%= connect.options.livereload %>'
           },
           files: [
-            '<%= config.app %>/index.<%= config.platform %>.html',
-            '<%= config.app %>/css/safe.css',
-            '<%= config.app %>/css/safe.<%= config.platform %>.css'
+            '<%= config.src %>/index.<%= config.platform %>.html',
+            '<%= config.src %>/css/safe.css',
+            '<%= config.src %>/css/safe.<%= config.platform %>.css'
           ]
         }
       },
@@ -242,7 +243,7 @@
         install: {
           options: {
             command: ['create', 'platform', 'plugin'],
-            platforms: ['android'],
+            platforms: '<%= config.supported %>',
             plugins: [
               'camera',
               'file',

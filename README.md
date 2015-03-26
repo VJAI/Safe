@@ -10,11 +10,11 @@ Safe is created in the aim to guide developers how to design and develop a hybri
 
 ## How?
 
-Safe is built using Cordova and with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to provide the look and feel for the app.
+Safe is built using Cordova and with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to give the look and feel.
 
 ## Setting up the machine
 
-You've to install Node, Grunt, Bower and Cordova. To configure the machine for iOS and Android developments the <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">cordova platform docs</a> will help you.
+You've to install Node, Grunt, Bower and Cordova. To configure the machine for iOS and Android development please go through the <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">cordova platform docs</a>.
 
 ## Running Safe
 
@@ -35,11 +35,9 @@ Once your machine is setup, you should run the following command as the first th
 
 > grunt create
 
-This will install all the node packages and bower components required for the project. It'll also create the cordova project and install the supported platforms and plugins.
+This will install all the node packages and bower components required for the project. It'll also create the cordova project and install the supported platforms and the needed plugins.
 
-Following are the other important grunt commands you should know.
-
-Assuming you've configured both the platforms and the default platform is 'ios'.
+Assuming you've configured for both the platforms and the default platform is 'ios'. Following are the other important grunt commands you should know.
 
 | Command                           | Purpose       |
 | --------------------------------- | ------------- |
@@ -51,15 +49,19 @@ Assuming you've configured both the platforms and the default platform is 'ios'.
 | grunt deploy --platform=android   | Deploy the app in Android device  |
 | grunt tests                       | Run the Jasmine unit tests |
 
-Please scan the grunt file and discover other grunt commands.
+Please scan the grunt file and discover more grunt commands.
 
 ## Settings
 
 The key that is used to encrypt the credential is stored in the settings file which exist under src/js. You SHOULD update the `encDecKey` and set a complex base64 string to it.
 
+## Known issues
+
+While testing in couple of Nexus devices I noticed the encryption is taking too much time! I tested in a brand new Moto E device and it was blazing fast. If you are facing too much slowness then you could turn off encryption by overriding the `encrypt` property in settings file to false, which I don't recommend!
+
 ## Contributions
 
-Safe supports currently iOS and Android platforms. If you are interested to extend the support to other platforms please <a href="http://www.prideparrot.com/contact">contact me</a>.
+Safe supports currently iOS and Android platforms. If you are interested to extend the support to other platforms please <a href="http://www.prideparrot.com/contact">contact me</a>. I'll be glad to help out.
 
 ## License
 
@@ -72,11 +74,11 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
->> You are free to use the app for your own personal use.
+* You are free to use the app for your own personal use.
 
->> You are not allowed to sell this app in same or different name.
+* You are not allowed to sell this app in same or different name.
 
->> You are also not allowed to build and sell apps by copying maximum portion
+* You are also not allowed to build and sell apps by copying maximum portion
    of the source code.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,

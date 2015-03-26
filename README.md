@@ -4,7 +4,7 @@
 
 Safe is a hybrid mobile app that helps to keep your photos safe. The stored photos are encrypted using AES-256 algorithm. Safe supports iOS and Android platforms.
 
-![Image of Safe in iPhone 3GS](/images/safe-ios.png)
+![Image of Safe in iPhone 3GS](https://raw.githubusercontent.com/VJAI/Safe/master/images/safe_ios.png)
 
 ## Why?
 

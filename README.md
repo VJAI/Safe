@@ -2,33 +2,37 @@
 
 ## What?
 
-Safe is a hybrid mobile app that helps to store photos safely using AES256 encryption. Safe runs successfully in iOS and Android platforms.
+Safe is a hybrid mobile app that helps to store photos safely. The stored photos are encrypted using AES-256 encryption algorithm. Safe runs successfully in both iOS and Android platforms.
 
 ## Why?
 
-Safe is created in the aim to help developers to teach them how to architect a hybrid mobile app using client-side technologies.
+Safe is created in the aim to guide developers how to architect a hybrid mobile app using client-side technologies.
 
 ## How?
 
-Safe is built using Cordova with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to decorate the look and feel.
+Safe is built using Cordova with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to provide the look and feel for the app.
 
 ## Setting up your machine
 
-Node, Grunt and Bower are used to assist the development of Safe. Cordova is used to build safe. You should install these tools before you can build and run the app in your machine or device.
+Node, Grunt and Bower are required to assist the development of the app. Cordova is needed to build the app. You should install these tools to build, run and deploy Safe.
 
-Safe is browser runnable! means, you can run and debug directly in the browser instead of using an emulator or a device. For running in emulator or deploying in a real device you need to configure your machine based on the <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">platform guidelines</a>.
+Safe is browser runnable! You can run and debug directly in the browser for testing purpose. For running in emulator or deploying in a real device you need to setup your machine. The <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">cordova platform docs</a> will guide you to setup your machine for iOS and Android platforms.
 
-For iOS, you need Mac and also you should subscribe to the Apple Developer Program. For Android, you can use Windows or Mac.
+For iOS, you need a Mac machine. You should also have to subscribe to the Apple Developer Program.
+
+For Android, you can use either Windows or Mac.
 
 ## Running Safe
 
-Once you've Node, Grunt CLI, Bower and Cordova installed in your machine then you can build and run Safe. After downloading the sourcecode, you might have to modify couple of properties in Gruntfile.js before executing any Grunt command.
+Once you've Node, Grunt CLI, Bower and Cordova installed in your machine then you can build and run Safe.
+
+You might have to modify couple of properties in Gruntfile.js before executing any Grunt command.
 
 ### `supported` property
 
-The `supported` property in the `config` object is used to control the platforms that Safe supports. As default, I'm assuming you are using Mac and you've both iOS and Android platforms configured successfully. If you are using Windows or you've configured only a single platform then you should update this property accordingly.
+The `supported` property in the `config` object is and array that is used to specify the platforms that you've configured in your machine. As default, I'm assuming you've both iOS and Android platforms configured. If you are using Windows or you've only a single platform configured then you should update this property accordingly.
 
-For ex., if you are using Windows.. obviously you've only the android platform configured then,
+For ex., if you are using Windows then obviously you've only the android platform configured, so the value of the `supported` property is `['android']`.
 
 ```
 var config = {
@@ -39,11 +43,9 @@ var config = {
 
 ### `platform` property
 
-The Project is structured and Grunt commands are framed in such that, at a time you can develop/run the app for a single platform. In better words, I can put it forward like this... through a single grunt command you can't install the app to both iOS and Android devices. First you should run the command to install to one platform and then to other.
+The Grunt commands are designed in such that, at a time you can develop/run the app for a single platform. In better words. through a single command you can't install the app to both platforms. First you should run the command to install to one platform and then to other.
 
-The `platform` property is used to control the default platform you are targeting at.
-
-If you've configured for only a single platform, let's say "android" then the value is "android".
+The `platform` property is used to control the default platform. If you've configured for only a single platform, let's say "android" then the value is "android".
 
 If you are using Mac and have both the platforms configured then you can leave the default platform to "ios" or change it to "android". The value of this property can be changed through the parameter you pass in the Grunt command.
 
@@ -54,7 +56,7 @@ var config = {
 };
 ```
 
-Once your machine is setup, you should run the following grunt command before running others.
+Once your machine is setup, you should run the following grunt command as first.
 
 ```
 > grunt create

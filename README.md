@@ -2,73 +2,87 @@
 
 ## What?
 
-Safe is a hybrid mobile app that helps to store photos safely. The stored photos are encrypted using AES-256 encryption algorithm. Safe runs successfully in both iOS and Android platforms.
+Safe is a hybrid mobile app that helps to keep your photos safe. The stored photos are encrypted using AES-256 algorithm. Safe supports iOS and Android platforms.
 
 ## Why?
 
-Safe is created in the aim to guide developers how to architect a hybrid mobile app using client-side technologies.
+Safe is created in the aim to guide developers how to design and develop a hybrid mobile app using client-side technologies.
 
 ## How?
 
-Safe is built using Cordova with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to provide the look and feel for the app.
+Safe is built using Cordova and with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to provide the look and feel for the app.
 
-## Setting up your machine
+## Setting up the machine
 
-Node, Grunt and Bower are required to assist the development of the app. Cordova is needed to build the app. You should install these tools to build, run and deploy Safe.
-
-Safe is browser runnable! You can run and debug directly in the browser for testing purpose. For running in emulator or deploying in a real device you need to setup your machine. The <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">cordova platform docs</a> will guide you to setup your machine for iOS and Android platforms.
-
-For iOS, you need a Mac machine. You should also have to subscribe to the Apple Developer Program.
-
-For Android, you can use either Windows or Mac.
+You've to install Node, Grunt, Bower and Cordova. To configure the machine for iOS and Android developments the <a href="https://cordova.apache.org/docs/en/4.0.0/guide_platforms_index.md.html#Platform%20Guides" target="_blank">cordova platform docs</a> will help you.
 
 ## Running Safe
 
-Once you've Node, Grunt CLI, Bower and Cordova installed in your machine then you can build and run Safe.
+Once you've installed the necessary tools and downloaded the source-code, you might have to modify couple of configuration properties in the grunt file (Gruntfile.js).
 
-You might have to modify couple of properties in Gruntfile.js before executing any Grunt command.
+### The `supported` property
 
-### `supported` property
+The `supported` property is an array that is used to specify the platforms that you've configured in your machine.
+If you are using Windows then you can configure only for the android platform, so the value of the `supported` property is `['android']`.
 
-The `supported` property in the `config` object is and array that is used to specify the platforms that you've configured in your machine. As default, I'm assuming you've both iOS and Android platforms configured. If you are using Windows or you've only a single platform configured then you should update this property accordingly.
+### The `platform` property
 
-For ex., if you are using Windows then obviously you've only the android platform configured, so the value of the `supported` property is `['android']`.
+At a time you can run Grunt commands for a single platform. For example you cannot build the source-code for both the platforms through a single command. You've to pass the platform parameter along with the Grunt commands. If you don't pass the parameter then what you've specified in the `platform` property is used.
 
-```
-var config = {
-  supported: ['android'], // supported platforms
-  ...
-};
-```
+### Grunt commands
 
-### `platform` property
+Once your machine is setup, you should run the following command as the first thing.
 
-The Grunt commands are designed in such that, at a time you can develop/run the app for a single platform. In better words. through a single command you can't install the app to both platforms. First you should run the command to install to one platform and then to other.
-
-The `platform` property is used to control the default platform. If you've configured for only a single platform, let's say "android" then the value is "android".
-
-If you are using Mac and have both the platforms configured then you can leave the default platform to "ios" or change it to "android". The value of this property can be changed through the parameter you pass in the Grunt command.
-
-```
-var config = {
-  supported: ['android'], // supported platforms
-  platform: 'android'     // default platform
-};
-```
-
-Once your machine is setup, you should run the following grunt command as first.
-
-```
 > grunt create
-```
 
-This will install all the necessary node packages and bower components for the project. It'll also create a cordova project and add the supported platforms and plugins.
+This will install all the node packages and bower components required for the project. It'll also create the cordova project and install the supported platforms and plugins.
 
-### Other Grunt Commands
+Following are the other important grunt commands you should know.
 
-[TODO]
+Assuming you've configured both the platforms and the default platform is 'ios'.
 
+| Command                           | Purpose       |
+| --------------------------------- | ------------- |
+| grunt serve                       | Start a web server and run the app for iOS in browser |
+| grunt emulate                     | Build the app and run it in iOS emulator |
+| grunt deploy                      | Deploy the app in iOS device |
+| grunt serve --platform=android    | Start a web server and run the app for Android in browser |
+| grunt emulate --platform=android  | Build the app and run it in Android emulator  |
+| grunt deploy --platform=android   | Deploy the app in Android device  |
+| grunt tests                       | Run the Jasmine unit tests |
+
+Please scan the grunt file and discover other grunt commands.
 
 ## Settings
 
+The key that is used to encrypt the credential is stored in the settings file which exist under src/js. You SHOULD update the `encDecKey` and set a complex base64 string to it.
+
+## Contributions
+
+Safe supports currently iOS and Android platforms. If you are interested to extend the support to other platforms please <a href="http://www.prideparrot.com/contact">contact me</a>.
+
 ## License
+
+Copyright Vijaya Anand, http://www.prideparrot.com
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+>> You are free to use the app for your own personal use.
+
+>> You are not allowed to sell this app in same or different name.
+
+>> You are also not allowed to build and sell apps by copying maximum portion
+   of the source code.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

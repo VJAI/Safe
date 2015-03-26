@@ -76,8 +76,6 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-* You are free to use the app for your own personal use.
-
 * You are not allowed to sell this app in same or different name.
 
 * You are also not allowed to build and sell apps by copying maximum portion

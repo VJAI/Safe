@@ -1,7 +1,7 @@
 (function () {
 
   'use strict';
-  
+
   require.config({
 
     baseUrl: 'js',
@@ -37,9 +37,9 @@
       }
     }
   });
-  
+
   var isDevice = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/);
-  
+
   if(!isDevice) {
     require.config({
       paths: {

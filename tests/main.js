@@ -1,5 +1,5 @@
 (function () {
-  
+
   'use strict';
 
   var allTestFiles = [];
@@ -17,7 +17,7 @@
   });
 
   require.config({
-    baseUrl: '/base/app/js',
+    baseUrl: '/base/src/js',
 
     paths: {
       jquery: '../../bower_components/jquery/dist/jquery',

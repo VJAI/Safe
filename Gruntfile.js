@@ -66,7 +66,7 @@
           port: 9002,
           reporters: ['mocha', 'coverage'],
           preprocessors: {
-            '<%= config.src %>/js/**/*.js': 'coverage'
+            '<%= config.src %>/js/views/*.js': 'coverage'
           },
           coverageReporter: {
             type: 'text'

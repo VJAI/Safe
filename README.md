@@ -25,7 +25,7 @@ Once you've installed the necessary tools and downloaded the source-code, you mi
 ### The `supported` property
 
 The `supported` property is an array that is used to specify the platforms that you've configured in your machine.
-If you are using Windows then you can configure only for the android platform, so the value of the `supported` property is `['android']`.
+If you are using Windows, then you can configure only for the android platform and you should update the `supported` property to `['android']`.
 
 ### The `platform` property
 
@@ -44,10 +44,10 @@ Assuming you've configured for both the platforms and the default platform is 'i
 | Command                           | Purpose       |
 | --------------------------------- | ------------- |
 | grunt serve                       | Start a web server and run the app for iOS in browser |
-| grunt emulate                     | Build the app and run it in iOS emulator |
+| grunt emulate                     | Run the app in iOS emulator |
 | grunt deploy                      | Deploy the app in iOS device |
 | grunt serve --platform=android    | Start a web server and run the app for Android in browser |
-| grunt emulate --platform=android  | Build the app and run it in Android emulator  |
+| grunt emulate --platform=android  | Run the app in Android emulator  |
 | grunt deploy --platform=android   | Deploy the app in Android device  |
 | grunt tests                       | Run the Jasmine unit tests |
 
@@ -59,11 +59,11 @@ The key that is used to encrypt the credential is stored in the settings file wh
 
 ## Known issues
 
-While testing in couple of Nexus devices I noticed the encryption is taking too much time! I tested in a brand new Moto E device and it was blazing fast. If you are facing too much slowness then you could turn off encryption by overriding the `encrypt` property in settings file to false, which I don't recommend!
+While testing in couple of Nexus devices I noticed the encryption is taking too much time. I tested in a brand new Moto E device and it was blazing fast. If you are facing too much slowness then you could turn off encryption by overriding the `encrypt` property in settings file to false, which I don't recommend!
 
 ## Contributions
 
-Safe supports currently iOS and Android platforms. If you are interested to extend the support to other platforms please <a href="http://www.prideparrot.com/contact">contact me</a>. I'll be glad to help out.
+Safe supports currently iOS and Android platforms. If you are interested to extend the support to other platforms please <a href="http://www.prideparrot.com/contact">contact me</a>. I'll be so glad to help out.
 
 ## License
 

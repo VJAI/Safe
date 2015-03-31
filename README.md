@@ -12,7 +12,7 @@ Safe is created in the aim to guide developers how to design and develop a hybri
 
 ## How?
 
-Safe is built using Cordova and with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handebars. Ratchet is used to give the look and feel.
+Safe is built using Cordova and with plethora of client-side technologies like Backbone, Underscore, RequireJs and Handlebars. Ratchet is used to give the look and feel.
 
 ## Setting up the machine
 

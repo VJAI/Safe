@@ -49,8 +49,9 @@ define([
   // Extend backbone views with custom methods.
   _.extend(Backbone.View.prototype, {
 
-    // Stop listening to events and clear the children.
+    // Stop listening to events and remove the children.
     ghost: function () {
+      this.unstickit();
       this.stopListening();
       this.undelegateEvents();
       this.$el.html('');

@@ -43,10 +43,10 @@ Assuming you've configured for both the platforms and the default platform is 'i
 
 | Command                           | Purpose       |
 | --------------------------------- | ------------- |
-| grunt serve                       | Start a web server and run the app for iOS in browser |
+| grunt                             | Start a web server and run the app for iOS in browser |
 | grunt emulate                     | Run the app in iOS emulator |
 | grunt deploy                      | Deploy the app in iOS device |
-| grunt serve --platform=android    | Start a web server and run the app for Android in browser |
+| grunt --platform=android          | Start a web server and run the app for Android in browser |
 | grunt emulate --platform=android  | Run the app in Android emulator  |
 | grunt deploy --platform=android   | Deploy the app in Android device  |
 | grunt tests                       | Run the Jasmine unit tests |

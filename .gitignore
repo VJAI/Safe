@@ -6,4 +6,4 @@ coverage
 # Cordova folders
 cordova
 # Handlebars template file
-app/js/templates.js
+src/js/templates.js

@@ -31,13 +31,25 @@ If you are using Windows, then you can configure only for the android platform a
 
 At a time you can run Grunt commands for a single platform. For example you cannot build the source-code for both the platforms through a single command. You've to pass the platform parameter along with the Grunt commands. If you don't pass the parameter then what you've specified in the `platform` property is used.
 
+### Install node modules and bower components
+
+Once your machine is setup, you should run the following commands from the terminal.
+
+> npm install
+
+This will install all the required node modules locally for the project.
+
+> bower install
+
+This will install all the required bower components locally for the project.
+
 ### Grunt commands
 
-Once your machine is setup, you should run the following command as the first thing.
+Once you installed all the necessary components, you should run the below grunt command.
 
 > grunt create
 
-This will install all the node packages and bower components required for the project. It'll also create the cordova project and install the supported platforms and the needed plugins.
+This will create the cordova project and install the supported platforms and the needed plugins.
 
 Assuming you've configured for both the platforms and the default platform is 'ios'. Following are the other important grunt commands you should know.
 
@@ -51,7 +63,6 @@ Assuming you've configured for both the platforms and the default platform is 'i
 | grunt deploy --platform=android   | Deploy the app in Android device  |
 | grunt tests                       | Run the Jasmine unit tests |
 
-Please scan the grunt file and discover more grunt commands.
 
 ## Settings
 

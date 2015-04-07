@@ -229,12 +229,6 @@
         }
       },
 
-      // Install node packages and bower components.
-      /*jshint camelcase:false*/
-      auto_install: {
-        local: {}
-      },
-
       // Task to install platforms and plugins and to build, emulate and deploy the app.
       cordovacli: {
         options: {
@@ -288,20 +282,8 @@
       'copy'
     ]);
 
-    grunt.registerTask('cordova-build', [
-      'cordovacli:build'
-    ]);
-
-    grunt.registerTask('cordova-emulate', [
-      'cordovacli:emulate'
-    ]);
-
-    grunt.registerTask('cordova-deploy', [
-      'cordovacli:deploy'
-    ]);
-
     // Start the server and watch for changes.
-    grunt.registerTask('default', [
+    grunt.registerTask('serve', [
       'jshint:src',
       'handlebars',
       'connect:app',
@@ -320,10 +302,8 @@
       'karma'
     ]);
 
-    // Install node packages and bower components.
     // Create cordova project, add platforms and plugins.
     grunt.registerTask('create', [
-      'auto_install',
       'cordovacli:install'
     ]);
 
@@ -343,6 +323,11 @@
     grunt.registerTask('deploy', [
       'buildweb',
       'cordovacli:deploy'
+    ]);
+
+    // Default task.
+    grunt.registerTask('default', [
+      'serve'
     ]);
   };
 })();

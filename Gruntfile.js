@@ -208,9 +208,21 @@
         // Watch javascript files.
         js: {
           files: [
-            '<%= config.src %>/js/**/*.js'
+            '<%= config.src %>/js/**/*.js',
+            '!<%= config.src %>/js/templates.js'
           ],
           tasks: ['jshint:src'],
+          options: {
+            livereload: true
+          }
+        },
+
+        // Watch handlebar templates.
+        handlebars: {
+          files: [
+            '<%= config.src %>/html/{,*/}*.handlebars'
+          ],
+          tasks: ['handlebars'],
           options: {
             livereload: true
           }

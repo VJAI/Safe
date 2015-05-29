@@ -1,10 +1,7 @@
 {
   "name": "Safe",
   "description": "Cordova based hybrid mobile app to keep your photos safe",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VJAI/Safe.git"
-  },
+  "version": "0.1.0",
   "devDependencies": {
     "cca": "~0.5.1",
     "cordova": "~4.3.0",
@@ -34,5 +31,6 @@
     "load-grunt-tasks": "^0.6.0",
     "requirejs": "~2.1.16",
     "time-grunt": "^1.0.0"
-  }
+  },
+  "private": true
 }

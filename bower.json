@@ -1,6 +1,7 @@
 {
   "name": "Safe",
   "description": "Cordova based hybrid mobile app to keep your photos safe",
+  "version": "0.1.0",
   "dependencies": {
     "almond": "~0.3.1",
     "backbone": "~1.1.2",

@@ -29,8 +29,8 @@
           jshintrc: '.jshintrc',
           reporter: require('jshint-stylish')
         },
+        gruntfile: 'Gruntfile.js',
         src: [
-          'Gruntfile.js',
           '<%= config.src %>/js/**/*.js',
           '!<%= config.src %>/js/templates.js'
         ],
@@ -202,7 +202,8 @@
 
         // Watch grunt file.
         gruntfile: {
-          files: ['Gruntfile.js']
+          files: ['Gruntfile.js'],
+          tasks: ['jshint:gruntfile']
         },
 
         // Watch javascript files.

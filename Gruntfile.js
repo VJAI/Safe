@@ -1,8 +1,8 @@
-(function () {
+module.exports = (function() {
 
   'use strict';
 
-  module.exports = function (grunt) {
+  return function (grunt) {
 
     // Load all the grunt tasks.
     require('load-grunt-tasks')(grunt);
@@ -343,4 +343,5 @@
       'serve'
     ]);
   };
+
 })();

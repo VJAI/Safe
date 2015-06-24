@@ -10,7 +10,7 @@
     <span class="icon icon-home"></span>
     <span class="tab-label">Home</span>
   </a>
-  <a class="tab-item active" href="#settings">
+  <a class="tab-item" href="#settings">
     <span class="icon icon-gear"></span>
     <span class="tab-label">Settings</span>
   </a>
@@ -24,7 +24,7 @@
   <form id="changesecurityinfo-form" class="content-padded">
     <select id="security-question" name="security-question">
       <option>Select a question</option>
-      {{#each questions}}      
+      {{#each questions}}
       <option>{{this}}</option>
       {{/each}}
     </select>

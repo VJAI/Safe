@@ -7,61 +7,61 @@ this["JST"]["addedit"] = Handlebars.template({"1":function(depth0,helpers,partia
 
   return "  <a href=\"#photos/"
     + this.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"btn btn-link btn-nav pull-left\">\r\n";
+    + "\" class=\"btn btn-link btn-nav pull-left\">\n";
 },"3":function(depth0,helpers,partials,data) {
-    return "  <a href=\"#photos\" class=\"btn btn-link btn-nav pull-left\">\r\n";
+    return "  <a href=\"#photos\" class=\"btn btn-link btn-nav pull-left\">\n";
 },"5":function(depth0,helpers,partials,data) {
-    return "    Edit Photo\r\n";
+    return "    Edit Photo\n";
 },"7":function(depth0,helpers,partials,data) {
-    return "    Add Photo\r\n";
+    return "    Add Photo\n";
 },"9":function(depth0,helpers,partials,data) {
     var helper;
 
   return "      <img id=\"photo\" class=\"img-responsive\" src=\"data:image/png;base64,"
     + this.escapeExpression(((helper = (helper = helpers.thumbnail || (depth0 != null ? depth0.thumbnail : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"thumbnail","hash":{},"data":data}) : helper)))
-    + "\" />\r\n";
+    + "\" />\n";
 },"11":function(depth0,helpers,partials,data) {
-    return "      <img id=\"photo\" class=\"img-responsive\" src=\"images/placeholder.png\" />\r\n";
+    return "      <img id=\"photo\" class=\"img-responsive\" src=\"images/placeholder.png\" />\n";
 },"13":function(depth0,helpers,partials,data) {
-    return "    <input id=\"delete\" type=\"button\" value=\"Delete\" class=\"btn btn-negative btn-block\">\r\n";
+    return "    <input id=\"delete\" type=\"button\" value=\"Delete\" class=\"btn btn-negative btn-block\">\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<header class=\"bar bar-nav\">\r\n"
+  return "<header class=\"bar bar-nav\">\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.id : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.program(3, data, 0),"data":data})) != null ? stack1 : "")
-    + "    <span class=\"icon icon-close\"></span>\r\n  </a>\r\n  <button id=\"save\" disabled class=\"btn btn-link btn-nav pull-right\">\r\n    <span class=\"icon icon-check\"></span>\r\n  </button>\r\n  <h1 class=\"title\">\r\n"
+    + "    <span class=\"icon icon-close\"></span>\n  </a>\n  <button id=\"save\" disabled class=\"btn btn-link btn-nav pull-right\">\n    <span class=\"icon icon-check\"></span>\n  </button>\n  <h1 class=\"title\">\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.id : depth0),{"name":"if","hash":{},"fn":this.program(5, data, 0),"inverse":this.program(7, data, 0),"data":data})) != null ? stack1 : "")
-    + "  </h1>\r\n</header>\r\n\r\n<nav class=\"bar bar-tab\">\r\n  <a class=\"tab-item active\" href=\"#photos\">\r\n    <span class=\"icon icon-home\"></span>\r\n    <span class=\"tab-label\">Home</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#settings\">\r\n    <span class=\"icon icon-gear\"></span>\r\n    <span class=\"tab-label\">Settings</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n</nav>\r\n\r\n<div class=\"content\">\r\n  <form id=\"addedit-form\" class=\"content-padded\">\r\n    <input id=\"description\" name=\"description\" type=\"text\" placeholder=\"Enter description\" maxlength=\"25\">\r\n    <a href=\"javascript:void(0);\" id=\"addphoto\">\r\n"
+    + "  </h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n  <a class=\"tab-item\" href=\"#photos\">\n    <span class=\"icon icon-home\"></span>\n    <span class=\"tab-label\">Home</span>\n  </a>\n  <a class=\"tab-item\" href=\"#settings\">\n    <span class=\"icon icon-gear\"></span>\n    <span class=\"tab-label\">Settings</span>\n  </a>\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n</nav>\n\n<div class=\"content\">\n  <form id=\"addedit-form\" class=\"content-padded\">\n    <input id=\"description\" name=\"description\" type=\"text\" placeholder=\"Enter description\" maxlength=\"25\">\n    <a href=\"javascript:void(0);\" id=\"addphoto\">\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.thumbnail : depth0),{"name":"if","hash":{},"fn":this.program(9, data, 0),"inverse":this.program(11, data, 0),"data":data})) != null ? stack1 : "")
-    + "    </a>\r\n"
+    + "    </a>\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.id : depth0),{"name":"if","hash":{},"fn":this.program(13, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "  </form>\r\n</div>";
+    + "  </form>\n</div>\n";
 },"useData":true});
 
 this["JST"]["changepassword"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
-    return "  <a class=\"tab-item\" href=\"#photos\">\r\n    <span class=\"icon icon-home\"></span>\r\n    <span class=\"tab-label\">Home</span>\r\n  </a>\r\n  <a class=\"tab-item active\" href=\"#settings\">\r\n    <span class=\"icon icon-gear\"></span>\r\n    <span class=\"tab-label\">Settings</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n";
+    return "  <a class=\"tab-item\" href=\"#photos\">\n    <span class=\"icon icon-home\"></span>\n    <span class=\"tab-label\">Home</span>\n  </a>\n  <a class=\"tab-item\" href=\"#settings\">\n    <span class=\"icon icon-gear\"></span>\n    <span class=\"tab-label\">Settings</span>\n  </a>\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n";
 },"3":function(depth0,helpers,partials,data) {
-    return "  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n";
+    return "  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1, helper;
 
-  return "<header class=\"bar bar-nav\">\r\n  <a href=\"#"
+  return "<header class=\"bar bar-nav\">\n  <a href=\"#"
     + this.escapeExpression(((helper = (helper = helpers.backToUrl || (depth0 != null ? depth0.backToUrl : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"backToUrl","hash":{},"data":data}) : helper)))
-    + "\" class=\"btn btn-link btn-nav pull-left\">\r\n    <span class=\"icon icon-left-nav\"></span>\r\n  </a>\r\n  <h1 class=\"title\">Change Password</h1>\r\n</header>\r\n\r\n<nav class=\"bar bar-tab\">\r\n"
+    + "\" class=\"btn btn-link btn-nav pull-left\">\n    <span class=\"icon icon-left-nav\"></span>\n  </a>\n  <h1 class=\"title\">Change Password</h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.isAuthenticated : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.program(3, data, 0),"data":data})) != null ? stack1 : "")
-    + "</nav>\r\n\r\n<div class=\"content\">\r\n  <form id=\"changepassword-form\" class=\"content-padded\">\r\n    <input id=\"password\" name=\"password\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your new password\" autocomplete=\"off\">\r\n    <input id=\"change\" type=\"submit\" value=\"Change\" disabled class=\"btn btn-positive btn-block\">\r\n  </form>\r\n</div>";
+    + "</nav>\n\n<div class=\"content\">\n  <form id=\"changepassword-form\" class=\"content-padded\">\n    <input id=\"password\" name=\"password\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your new password\" autocomplete=\"off\">\n    <input id=\"change\" type=\"submit\" value=\"Change\" disabled class=\"btn btn-positive btn-block\">\n  </form>\n</div>\n";
 },"useData":true});
 
 this["JST"]["changesecurityinfo"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     return "      <option>"
     + this.escapeExpression(this.lambda(depth0, depth0))
-    + "</option>\r\n";
+    + "</option>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<header class=\"bar bar-nav\">\r\n  <a href=\"#settings\" class=\"btn btn-link btn-nav pull-left\">\r\n    <span class=\"icon icon-left-nav\"></span>\r\n  </a>\r\n  <h1 class=\"title\">Change SecurityInfo</h1>\r\n</header>\r\n\r\n<nav class=\"bar bar-tab\">\r\n  <a class=\"tab-item\" href=\"#photos\">\r\n    <span class=\"icon icon-home\"></span>\r\n    <span class=\"tab-label\">Home</span>\r\n  </a>\r\n  <a class=\"tab-item active\" href=\"#settings\">\r\n    <span class=\"icon icon-gear\"></span>\r\n    <span class=\"tab-label\">Settings</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n</nav>\r\n\r\n<div class=\"content\">\r\n  <form id=\"changesecurityinfo-form\" class=\"content-padded\">\r\n    <select id=\"security-question\" name=\"security-question\">\r\n      <option>Select a question</option>\r\n"
+  return "<header class=\"bar bar-nav\">\n  <a href=\"#settings\" class=\"btn btn-link btn-nav pull-left\">\n    <span class=\"icon icon-left-nav\"></span>\n  </a>\n  <h1 class=\"title\">Change SecurityInfo</h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n  <a class=\"tab-item\" href=\"#photos\">\n    <span class=\"icon icon-home\"></span>\n    <span class=\"tab-label\">Home</span>\n  </a>\n  <a class=\"tab-item\" href=\"#settings\">\n    <span class=\"icon icon-gear\"></span>\n    <span class=\"tab-label\">Settings</span>\n  </a>\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n</nav>\n\n<div class=\"content\">\n  <form id=\"changesecurityinfo-form\" class=\"content-padded\">\n    <select id=\"security-question\" name=\"security-question\">\n      <option>Select a question</option>\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.questions : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </select>\r\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\"  autocomplete=\"off\">\r\n    <input id=\"save\" type=\"submit\" value=\"Save\" disabled class=\"btn btn-positive btn-block\">\r\n  </form>\r\n</div>";
+    + "    </select>\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\"  autocomplete=\"off\">\n    <input id=\"save\" type=\"submit\" value=\"Save\" disabled class=\"btn btn-positive btn-block\">\n  </form>\n</div>\n";
 },"useData":true});
 
 this["JST"]["forgotpassword"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -117,13 +117,13 @@ this["JST"]["login"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"ma
 this["JST"]["photo"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
-  return "<header class=\"bar bar-nav\">\r\n  <a href=\"#photos\" class=\"btn btn-link btn-nav pull-left\">\r\n    <span class=\"icon icon-left-nav\"></span>\r\n  </a>\r\n  <a href=\"#edit/"
+  return "<header class=\"bar bar-nav\">\n  <a href=\"#photos\" class=\"btn btn-link btn-nav pull-left\">\n    <span class=\"icon icon-left-nav\"></span>\n  </a>\n  <a href=\"#edit/"
     + alias3(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"btn btn-link btn-nav pull-right\">\r\n    <span class=\"icon icon-edit\"></span>\r\n  </a>\r\n  <h1 class=\"title\">View Photo</h1>\r\n</header>\r\n\r\n<nav class=\"bar bar-tab\">\r\n  <a class=\"tab-item active\" href=\"#photos\">\r\n    <span class=\"icon icon-home\"></span>\r\n    <span class=\"tab-label\">Home</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#settings\">\r\n    <span class=\"icon icon-gear\"></span>\r\n    <span class=\"tab-label\">Settings</span>\r\n  </a>\r\n  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n</nav>\r\n\r\n<div class=\"content\">\r\n  <div class=\"content-padded\">\r\n    <div class=\"description\">"
+    + "\" class=\"btn btn-link btn-nav pull-right\">\n    <span class=\"icon icon-edit\"></span>\n  </a>\n  <h1 class=\"title\">View Photo</h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n  <a class=\"tab-item\" href=\"#photos\">\n    <span class=\"icon icon-home\"></span>\n    <span class=\"tab-label\">Home</span>\n  </a>\n  <a class=\"tab-item\" href=\"#settings\">\n    <span class=\"icon icon-gear\"></span>\n    <span class=\"tab-label\">Settings</span>\n  </a>\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n</nav>\n\n<div class=\"content\">\n  <div class=\"content-padded\">\n    <div class=\"description\">"
     + alias3(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"description","hash":{},"data":data}) : helper)))
-    + "</div>\r\n    <img id=\"photo\" class=\"img-responsive\" src=\"data:image/png;base64,"
+    + "</div>\n    <img id=\"photo\" class=\"img-responsive\" src=\"data:image/png;base64,"
     + alias3(((helper = (helper = helpers.thumbnail || (depth0 != null ? depth0.thumbnail : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"thumbnail","hash":{},"data":data}) : helper)))
-    + "\">\r\n  </div>\r\n</div>";
+    + "\">\n  </div>\n</div>\n";
 },"useData":true});
 
 this["JST"]["photoitem"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

@@ -50,12 +50,15 @@ define([
 
       // Create a new guid and set it as the encryption/decryption key for the model.
       this.model.set('key', _.guid());
-      
-      // Hook the handler to enable/disable the register button whenever the model changes.
-      this.listenTo(this.model, 'change', this.enableRegister);
+
+      // Hook the handler to enable/disable security question whenever the password changes.
+      this.listenTo(this.model, 'change:password', this.enableQuestion);
 
       // Hook the handler to enable/disable answer textbox when the selected security question changes.
       this.listenTo(this.model, 'change:securityQuestion', this.enableAnswer);
+
+      // Hook the handler to enable/disable the register button whenever the model changes.
+      this.listenTo(this.model, 'change', this.enableRegister);
     },
 
     // Render the view, bind the controls and cache the elements.
@@ -66,11 +69,20 @@ define([
 
       this.stickit();
 
+      this.$securityQuestion = this.$('#security-question');
       this.$securityAnswer = this.$('#security-answer');
-      this.$confirmSecurityAnswer = this.$('#confirm-security-answer');
       this.$register = this.$('#register');
 
       return this;
+    },
+
+    // Enable the security question dropdown when the password is valid.
+    enableQuestion: function () {
+      if (this.model.isValid('password')) {
+        this.$securityQuestion.removeAttr('disabled');
+      } else {
+        this.$securityQuestion.attr('disabled', 'disabled');
+      }
     },
 
     // Clear the answer textbox, enable it if the selected question is valid.

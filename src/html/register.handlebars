@@ -16,7 +16,7 @@
 
   <form id="register-form" class="content-padded">
     <input id="password" name="password" type="password" maxlength="15" placeholder="Enter your password" autocomplete="off">
-    <select id="security-question" name="security-question">
+    <select id="security-question" name="security-question" disabled>
       <option selected>Select a question</option>
       {{#each questions}}
       <option>{{this}}</option>

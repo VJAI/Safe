@@ -61,7 +61,7 @@ this["JST"]["changesecurityinfo"] = Handlebars.template({"1":function(depth0,hel
 
   return "<header class=\"bar bar-nav\">\n  <a href=\"#settings\" class=\"btn btn-link btn-nav pull-left\">\n    <span class=\"icon icon-left-nav\"></span>\n  </a>\n  <h1 class=\"title\">Change Security Info</h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n  <a class=\"tab-item\" href=\"#photos\">\n    <span class=\"icon icon-home\"></span>\n    <span class=\"tab-label\">Home</span>\n  </a>\n  <a class=\"tab-item\" href=\"#settings\">\n    <span class=\"icon icon-gear\"></span>\n    <span class=\"tab-label\">Settings</span>\n  </a>\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n</nav>\n\n<div class=\"content\">\n  <form id=\"changesecurityinfo-form\" class=\"content-padded\">\n    <select id=\"security-question\" name=\"security-question\">\n      <option>Select a question</option>\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.questions : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </select>\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\"  autocomplete=\"off\">\n    <input id=\"save\" type=\"submit\" value=\"Save\" disabled class=\"btn btn-positive btn-block\">\n  </form>\n</div>\n";
+    + "    </select>\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\" disabled autocomplete=\"off\">\n    <input id=\"save\" type=\"submit\" value=\"Save\" disabled class=\"btn btn-positive btn-block\">\n  </form>\n</div>\n";
 },"useData":true});
 
 this["JST"]["forgotpassword"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -141,13 +141,13 @@ this["JST"]["photoitem"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"]
 this["JST"]["register"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
     return "      <option>"
     + this.escapeExpression(this.lambda(depth0, depth0))
-    + "</option>\r\n";
+    + "</option>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<header class=\"bar bar-nav\">\r\n  <h1 class=\"title\">SAFE</h1>\r\n</header>\r\n\r\n<nav class=\"bar bar-tab\">\r\n  <a class=\"tab-item\" href=\"#info\">\r\n    <span class=\"icon icon-info\"></span>\r\n    <span class=\"tab-label\">Info</span>\r\n  </a>\r\n</nav>\r\n\r\n<div class=\"content\">\r\n  <p class=\"content-padded text-center\">\r\n    Keep your photos safe!\r\n  </p>\r\n\r\n  <form id=\"register-form\" class=\"content-padded\">\r\n    <input id=\"password\" name=\"password\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your password\" autocomplete=\"off\">\r\n    <select id=\"security-question\" name=\"security-question\">\r\n      <option selected>Select a question</option>\r\n"
+  return "<header class=\"bar bar-nav\">\n  <h1 class=\"title\">SAFE</h1>\n</header>\n\n<nav class=\"bar bar-tab\">\n  <a class=\"tab-item\" href=\"#info\">\n    <span class=\"icon icon-info\"></span>\n    <span class=\"tab-label\">Info</span>\n  </a>\n</nav>\n\n<div class=\"content\">\n  <p class=\"content-padded text-center\">\n    Keep your photos safe!\n  </p>\n\n  <form id=\"register-form\" class=\"content-padded\">\n    <input id=\"password\" name=\"password\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your password\" autocomplete=\"off\">\n    <select id=\"security-question\" name=\"security-question\" disabled>\n      <option selected>Select a question</option>\n"
     + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.questions : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
-    + "    </select>\r\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\" disabled autocomplete=\"off\">\r\n    <input id=\"register\" type=\"submit\" value=\"Register\" class=\"btn btn-positive btn-block\" disabled>\r\n  </form>\r\n</div>";
+    + "    </select>\n    <input id=\"security-answer\" name=\"security-answer\" type=\"password\" maxlength=\"15\" placeholder=\"Enter your answer\" disabled autocomplete=\"off\">\n    <input id=\"register\" type=\"submit\" value=\"Register\" class=\"btn btn-positive btn-block\" disabled>\n  </form>\n</div>\n";
 },"useData":true});
 
 this["JST"]["settings"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

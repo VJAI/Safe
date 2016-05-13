@@ -2,7 +2,7 @@
 
 ## What?
 
-Safe is a hybrid mobile app that helps to keep your photos safe. The stored photos are encrypted using AES-256 algorithm. Safe supports iOS and Android platforms. To know how I built Safe step by step please take a look at this ![series](http://prideparrot.com/blog/archive/2015/8/how_to_create_an_awesome_hybrid_mobile_app).
+Safe is a hybrid mobile app that helps to keep your photos safe. The stored photos are encrypted using AES-256 algorithm. Safe supports iOS and Android platforms. To know how I built Safe step by step please take a look at this <a href="http://prideparrot.com/blog/archive/2015/8/how_to_create_an_awesome_hybrid_mobile_app" target="_blank">series</a>.
 
 ![Image of Safe in iPhone 3GS](https://raw.githubusercontent.com/VJAI/Safe/master/images/safe_ios.png)
 
